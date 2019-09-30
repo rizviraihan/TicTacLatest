@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
             "-", "-", "-",
             "-", "-", "-"};
 
-
     List<String> numberList = new ArrayList<>(Arrays.asList(boardData));
 
     GridView gridView;
@@ -39,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gridView = findViewById(R.id.gridview);
-        player0Result = findViewById(R.id.player0result);
-        player1Result = findViewById(R.id.player1result);
-        resultScore = findViewById(R.id.result);
-        resetButton = findViewById(R.id.resetButton);
+        gridView = (GridView) findViewById(R.id.gridview);
+        player0Result = (TextView) findViewById(R.id.player0result);
+        player1Result = (TextView) findViewById(R.id.player1result);
+        resultScore = (TextView) findViewById(R.id.result);
+        resetButton = (Button) findViewById(R.id.resetButton);
 
         adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, numberList);
@@ -58,17 +57,17 @@ public class MainActivity extends AppCompatActivity {
                 if (numberList.get(position).equals("-")) {
                     numberList.set(position, "0");
                     /////////////////////////////AI
-                    if ((numberList.get(0).equals("X") && numberList.get(1).equals("X")) || (numberList.get(0).equals("0") && numberList.get(1).equals("0"))) {
+                    if (numberList.get(0).equals("0") && numberList.get(1).equals("0") || numberList.get(0).equals("X") && numberList.get(1).equals("X")) {
                         if (numberList.get(2).equals("-")) {
                             numberList.set(2, "X");
 
-                        } else if ((numberList.get(2).equals("X") && numberList.get(4).equals("X")) || (numberList.get(2).equals("0") && numberList.get(4).equals("0"))) {
+                        } else if (numberList.get(2).equals("0") && numberList.get(4).equals("0") || numberList.get(2).equals("X") && numberList.get(4).equals("X")) {
                             if (numberList.get(6).equals("-")) {
                                 numberList.set(6, "X");
                             } else {
                                 fillUp();
                             }
-                        } else if ((numberList.get(2).equals("X") && numberList.get(6).equals("X")) || (numberList.get(2).equals("0") && numberList.get(6).equals("0"))) {
+                        } else if (numberList.get(2).equals("0") && numberList.get(6).equals("0") || numberList.get(2).equals("X") && numberList.get(6).equals("X")) {
                             if (numberList.get(4).equals("-")) {
                                 numberList.set(4, "X");
                             } else {
@@ -77,72 +76,72 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             fillUp();
                         }
-                    } else if ((numberList.get(3).equals("X") && numberList.get(6).equals("X")) || (numberList.get(3).equals("0") && numberList.get(6).equals("0"))
-                            || (numberList.get(8).equals("X") && numberList.get(4).equals("X")) || (numberList.get(8).equals("0") && numberList.get(4).equals("0"))
-                            || (numberList.get(1).equals("X") && numberList.get(2).equals("X")) || (numberList.get(1).equals("0") && numberList.get(2).equals("0"))) {
-                        if (numberList.get(0).equals("-")) {
-                            numberList.set(0, "X");
+                    } else if (numberList.get(6).equals("0") && numberList.get(7).equals("0") || numberList.get(6).equals("X") && numberList.get(7).equals("X")
+                            || numberList.get(2).equals("0") && numberList.get(5).equals("0") || numberList.get(2).equals("X") && numberList.get(5).equals("X")
+                            || numberList.get(0).equals("0") && numberList.get(4).equals("0") || numberList.get(0).equals("X") && numberList.get(4).equals("X")) {
+                        if (numberList.get(8).equals("-")) {
+                            numberList.set(8, "X");
                         } else {
                             fillUp();
                         }
-                    } else if ((numberList.get(0).equals("X") && numberList.get(2).equals("X")) || (numberList.get(0).equals("0") && numberList.get(2).equals("0"))
-                            || (numberList.get(4).equals("X") && numberList.get(7).equals("X")) || (numberList.get(4).equals("0") && numberList.get(7).equals("0"))) {
-                        if (numberList.get(1).equals("-")) {
-                            numberList.set(1, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if ((numberList.get(5).equals("X") && numberList.get(8).equals("X")) || (numberList.get(5).equals("0") && numberList.get(8).equals("0"))
-                            || (numberList.get(6).equals("X") && numberList.get(4).equals("X")) || (numberList.get(6).equals("0") && numberList.get(4).equals("0"))) {
-                        if (numberList.get(2).equals("-")) {
-                            numberList.set(2, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if ((numberList.get(0).equals("X") && numberList.get(6).equals("X")) || (numberList.get(0).equals("0") && numberList.get(6).equals("0"))
-                            || (numberList.get(4).equals("X") && numberList.get(5).equals("X")) || (numberList.get(4).equals("0") && numberList.get(5).equals("0"))) {
-                        if (numberList.get(3).equals("-")) {
-                            numberList.set(3, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if ((numberList.get(0).equals("X") && numberList.get(8).equals("X")) || (numberList.get(0).equals("0") && numberList.get(8).equals("0"))
-                            || (numberList.get(2).equals("X") && numberList.get(6).equals("X")) || (numberList.get(2).equals("0") && numberList.get(6).equals("0"))
-                            || (numberList.get(1).equals("X") && numberList.get(7).equals("X")) || (numberList.get(1).equals("0") && numberList.get(7).equals("0"))
-                            || (numberList.get(3).equals("X") && numberList.get(5).equals("X")) || (numberList.get(3).equals("0") && numberList.get(5).equals("0"))
-                            || (numberList.get(6).equals("X") && numberList.get(2).equals("X")) || (numberList.get(6).equals("0") && numberList.get(2).equals("0"))) {
+                    } else if (numberList.get(0).equals("0") && numberList.get(8).equals("0") || numberList.get(0).equals("X") && numberList.get(8).equals("X")
+                            || numberList.get(2).equals("0") && numberList.get(6).equals("0") || numberList.get(2).equals("X") && numberList.get(6).equals("X")
+                            || numberList.get(1).equals("0") && numberList.get(7).equals("0") || numberList.get(1).equals("X") && numberList.get(7).equals("X")
+                            || numberList.get(3).equals("0") && numberList.get(5).equals("0") || numberList.get(3).equals("X") && numberList.get(5).equals("X")
+                            || numberList.get(6).equals("0") && numberList.get(2).equals("0") || numberList.get(6).equals("X") && numberList.get(2).equals("X")) {
                         if (numberList.get(4).equals("-")) {
                             numberList.set(4, "X");
                         } else {
                             fillUp();
                         }
-                    } else if ((numberList.get(3).equals("X") && numberList.get(4).equals("X")) || (numberList.get(3).equals("0") && numberList.get(4).equals("0"))
-                            || (numberList.get(2).equals("X") && numberList.get(8).equals("X")) || (numberList.get(2).equals("0") && numberList.get(8).equals("0"))) {
-                        if (numberList.get(5).equals("-")) {
-                            numberList.set(5, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if ((numberList.get(0).equals("X") && numberList.get(3).equals("X")) || (numberList.get(0).equals("0") && numberList.get(3).equals("0"))
-                            || (numberList.get(2).equals("X") && numberList.get(4).equals("X")) || (numberList.get(2).equals("0") && numberList.get(4).equals("0"))
-                            || (numberList.get(7).equals("X") && numberList.get(8).equals("X")) || (numberList.get(7).equals("0") && numberList.get(8).equals("0"))) {
-                        if (numberList.get(6).equals("-")) {
-                            numberList.set(6, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if ((numberList.get(1).equals("X") && numberList.get(4).equals("X")) || (numberList.get(1).equals("0") && numberList.get(4).equals("0"))
-                            || (numberList.get(6).equals("X") && numberList.get(8).equals("X")) || (numberList.get(6).equals("0") && numberList.get(8).equals("0"))) {
+                    } else if (numberList.get(1).equals("0") && numberList.get(4).equals("0") || numberList.get(1).equals("X") && numberList.get(4).equals("X")
+                            || numberList.get(6).equals("0") && numberList.get(8).equals("0") || numberList.get(6).equals("X") && numberList.get(8).equals("X")) {
                         if (numberList.get(7).equals("-")) {
                             numberList.set(7, "X");
                         } else {
                             fillUp();
                         }
-                    } else if ((numberList.get(6).equals("X") && numberList.get(7).equals("X")) || (numberList.get(6).equals("0") && numberList.get(7).equals("0"))
-                            || (numberList.get(2).equals("X") && numberList.get(5).equals("X")) || (numberList.get(2).equals("0") && numberList.get(5).equals("0"))
-                            || (numberList.get(0).equals("X") && numberList.get(4).equals("X")) || (numberList.get(0).equals("0") && numberList.get(4).equals("0"))) {
-                        if (numberList.get(8).equals("-")) {
-                            numberList.set(8, "X");
+                    } else if (numberList.get(0).equals("0") && numberList.get(3).equals("0") || numberList.get(0).equals("X") && numberList.get(3).equals("X")
+                            || numberList.get(2).equals("0") && numberList.get(4).equals("0") || numberList.get(2).equals("X") && numberList.get(4).equals("X")
+                            || numberList.get(7).equals("0") && numberList.get(8).equals("0") || numberList.get(7).equals("X") && numberList.get(8).equals("X")) {
+                        if (numberList.get(6).equals("-")) {
+                            numberList.set(6, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(5).equals("0") && numberList.get(8).equals("0") || numberList.get(5).equals("X") && numberList.get(8).equals("X")
+                            || numberList.get(6).equals("0") && numberList.get(4).equals("0") || numberList.get(6).equals("X") && numberList.get(4).equals("X")) {
+                        if (numberList.get(2).equals("-")) {
+                            numberList.set(2, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(3).equals("0") && numberList.get(4).equals("0") || numberList.get(3).equals("X") && numberList.get(4).equals("X")
+                            || numberList.get(2).equals("0") && numberList.get(8).equals("0") || numberList.get(2).equals("X") && numberList.get(8).equals("X")) {
+                        if (numberList.get(5).equals("-")) {
+                            numberList.set(5, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(0).equals("0") && numberList.get(6).equals("0") || numberList.get(0).equals("X") && numberList.get(6).equals("X")
+                            || numberList.get(4).equals("0") && numberList.get(5).equals("0") || numberList.get(4).equals("X") && numberList.get(5).equals("X")) {
+                        if (numberList.get(3).equals("-")) {
+                            numberList.set(3, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(0).equals("0") && numberList.get(2).equals("0") || numberList.get(0).equals("X") && numberList.get(2).equals("X")
+                            || numberList.get(4).equals("0") && numberList.get(7).equals("0") || numberList.get(4).equals("X") && numberList.get(7).equals("X")) {
+                        if (numberList.get(1).equals("-")) {
+                            numberList.set(1, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(3).equals("0") && numberList.get(6).equals("0") || numberList.get(3).equals("X") && numberList.get(6).equals("X")
+                            || numberList.get(8).equals("0") && numberList.get(4).equals("0") || numberList.get(8).equals("X") && numberList.get(4).equals("X")
+                            || numberList.get(1).equals("0") && numberList.get(2).equals("0") || numberList.get(1).equals("X") && numberList.get(2).equals("X")) {
+                        if (numberList.get(0).equals("-")) {
+                            numberList.set(0, "X");
                         } else {
                             fillUp();
                         }
@@ -198,22 +197,15 @@ public class MainActivity extends AppCompatActivity {
         for (x = 0; x < numberList.size(); x++) {
             if (numberList.get(x).equals("-")) {
                 if (numberList.get(2).equals("0") && numberList.get(4).equals("0") && numberList.get(6).equals("0")) {
-                    break;
                 } else if (numberList.get(6).equals("0") && numberList.get(4).equals("0") && numberList.get(8).equals("0")) {
                     if (numberList.get(x).equals("-")) numberList.set(x, "X");
                     break;
                 } else if (numberList.get(0).equals("0") && numberList.get(1).equals("0") && numberList.get(2).equals("0")) {
-                    break;
                 } else if (numberList.get(3).equals("0") && numberList.get(4).equals("0") && numberList.get(5).equals("0")) {
-                    break;
                 } else if (numberList.get(6).equals("0") && numberList.get(7).equals("0") && numberList.get(8).equals("0")) {
-                    break;
                 } else if (numberList.get(0).equals("0") && numberList.get(3).equals("0") && numberList.get(6).equals("0")) {
-                    break;
                 } else if (numberList.get(1).equals("0") && numberList.get(4).equals("0") && numberList.get(7).equals("0")) {
-                    break;
                 } else if (numberList.get(2).equals("0") && numberList.get(5).equals("0") && numberList.get(8).equals("0")) {
-                    break;
                 } else if (numberList.get(0).equals("X") && numberList.get(4).equals("X") && numberList.get(8).equals("-")) {
                     numberList.set(8, "X");
                     break;
@@ -266,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playerOneGui() {
-        resultScore.setText("Player 1 Wins");
+        resultScore.setText(String.valueOf("Player 1 Wins"));
         gridView.setEnabled(false);
         resetButton.setEnabled(true);
         player0Result.setText(String.valueOf(playerOneResult + 1));
@@ -274,10 +266,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playerTwoGui() {
-        resultScore.setText("Player 2 Wins");
+        resultScore.setText(String.valueOf("Player 2 Wins"));
         gridView.setEnabled(false);
         resetButton.setEnabled(true);
         player1Result.setText(String.valueOf(playerTwoResult + 1));
         playerTwoResult++;
+
     }
 }
