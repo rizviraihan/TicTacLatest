@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 playerOneGui();
                 isWin = true;
             }
-            if (inputValue.equals("X")) {
+            if (inputValue.equals("X") && !isWin) {
                 playerTwoGui();
                 isWin = true;
             }
