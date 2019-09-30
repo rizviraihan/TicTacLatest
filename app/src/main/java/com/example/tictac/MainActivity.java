@@ -13,7 +13,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -146,15 +145,8 @@ public class MainActivity extends AppCompatActivity {
                             fillUp();
                         }
                     } else {
-                        int min = 0;
-                        int max = 8;
-                        int random = new Random().nextInt((max - min) + 1) + min;
                         for (int x = 0; x < numberList.size(); x++) {
-                            if (numberList.get(random).equals("-")) {
-                                numberList.set(random, "X");
-                                adapter.notifyDataSetChanged();
-                                break;
-                            } else {
+                            if (numberList.get(x).equals("-")) {
                                 numberList.set(x, "X");
                                 adapter.notifyDataSetChanged();
                                 break;
@@ -250,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 playerOneGui();
                 isWin = true;
             }
-            if (inputValue.equals("X") && !isWin) {
+            if (inputValue.equals("X")) {
                 playerTwoGui();
                 isWin = true;
             }
