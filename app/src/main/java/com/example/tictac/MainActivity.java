@@ -96,32 +96,11 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             fillUp();
                         }
-                    } else if (numberList.get(3).equals("X") && numberList.get(6).equals("X") || numberList.get(8).equals("X") && numberList.get(4).equals("X")
-                            || numberList.get(1).equals("X") && numberList.get(2).equals("X") || numberList.get(3).equals("0") && numberList.get(6).equals("0")
-                            || numberList.get(8).equals("0") && numberList.get(4).equals("0") || numberList.get(1).equals("0") && numberList.get(2).equals("0")) {
-                        if (numberList.get(0).equals("-")) {
-                            numberList.set(0, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if (numberList.get(0).equals("X") && numberList.get(2).equals("X") || numberList.get(4).equals("X") && numberList.get(7).equals("X")
-                            || numberList.get(0).equals("0") && numberList.get(2).equals("0") || numberList.get(4).equals("0") && numberList.get(7).equals("0")) {
-                        if (numberList.get(1).equals("-")) {
-                            numberList.set(1, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if (numberList.get(5).equals("X") && numberList.get(8).equals("X") || numberList.get(6).equals("X") && numberList.get(4).equals("X")
-                            || numberList.get(5).equals("0") && numberList.get(8).equals("0") || numberList.get(6).equals("0") && numberList.get(4).equals("0")) {
-                        if (numberList.get(2).equals("-")) {
-                            numberList.set(2, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if (numberList.get(0).equals("X") && numberList.get(6).equals("X") || numberList.get(4).equals("X") && numberList.get(5).equals("X")
-                            || numberList.get(0).equals("0") && numberList.get(6).equals("0") || numberList.get(4).equals("0") && numberList.get(5).equals("0")) {
-                        if (numberList.get(3).equals("-")) {
-                            numberList.set(3, "X");
+                    } else if (numberList.get(6).equals("X") && numberList.get(7).equals("X") || numberList.get(2).equals("X") && numberList.get(5).equals("X")
+                            || numberList.get(0).equals("X") && numberList.get(4).equals("X") || numberList.get(6).equals("0") && numberList.get(7).equals("0")
+                            || numberList.get(2).equals("0") && numberList.get(5).equals("0") || numberList.get(0).equals("0") && numberList.get(4).equals("0")) {
+                        if (numberList.get(8).equals("-")) {
+                            numberList.set(8, "X");
                         } else {
                             fillUp();
                         }
@@ -131,21 +110,6 @@ public class MainActivity extends AppCompatActivity {
                             || numberList.get(1).equals("0") && numberList.get(7).equals("0") || numberList.get(3).equals("0") && numberList.get(5).equals("0")) {
                         if (numberList.get(4).equals("-")) {
                             numberList.set(4, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if (numberList.get(3).equals("X") && numberList.get(4).equals("X") || numberList.get(2).equals("X") && numberList.get(8).equals("X")
-                            || numberList.get(3).equals("0") && numberList.get(4).equals("0") || numberList.get(2).equals("0") && numberList.get(8).equals("0")) {
-                        if (numberList.get(5).equals("-")) {
-                            numberList.set(5, "X");
-                        } else {
-                            fillUp();
-                        }
-                    } else if (numberList.get(6).equals("X") && numberList.get(7).equals("X") || numberList.get(2).equals("X") && numberList.get(5).equals("X")
-                            || numberList.get(0).equals("X") && numberList.get(4).equals("X") || numberList.get(6).equals("0") && numberList.get(7).equals("0")
-                            || numberList.get(2).equals("0") && numberList.get(5).equals("0") || numberList.get(0).equals("0") && numberList.get(4).equals("0")) {
-                        if (numberList.get(8).equals("-")) {
-                            numberList.set(8, "X");
                         } else {
                             fillUp();
                         }
@@ -161,6 +125,42 @@ public class MainActivity extends AppCompatActivity {
                             || numberList.get(2).equals("0") && numberList.get(4).equals("0") || numberList.get(7).equals("0") && numberList.get(8).equals("0")) {
                         if (numberList.get(6).equals("-")) {
                             numberList.set(6, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(5).equals("X") && numberList.get(8).equals("X") || numberList.get(6).equals("X") && numberList.get(4).equals("X")
+                            || numberList.get(5).equals("0") && numberList.get(8).equals("0") || numberList.get(6).equals("0") && numberList.get(4).equals("0")) {
+                        if (numberList.get(2).equals("-")) {
+                            numberList.set(2, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(3).equals("X") && numberList.get(4).equals("X") || numberList.get(2).equals("X") && numberList.get(8).equals("X")
+                            || numberList.get(3).equals("0") && numberList.get(4).equals("0") || numberList.get(2).equals("0") && numberList.get(8).equals("0")) {
+                        if (numberList.get(5).equals("-")) {
+                            numberList.set(5, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(0).equals("X") && numberList.get(6).equals("X") || numberList.get(4).equals("X") && numberList.get(5).equals("X")
+                            || numberList.get(0).equals("0") && numberList.get(6).equals("0") || numberList.get(4).equals("0") && numberList.get(5).equals("0")) {
+                        if (numberList.get(3).equals("-")) {
+                            numberList.set(3, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(0).equals("X") && numberList.get(2).equals("X") || numberList.get(4).equals("X") && numberList.get(7).equals("X")
+                            || numberList.get(0).equals("0") && numberList.get(2).equals("0") || numberList.get(4).equals("0") && numberList.get(7).equals("0")) {
+                        if (numberList.get(1).equals("-")) {
+                            numberList.set(1, "X");
+                        } else {
+                            fillUp();
+                        }
+                    } else if (numberList.get(3).equals("X") && numberList.get(6).equals("X") || numberList.get(8).equals("X") && numberList.get(4).equals("X")
+                            || numberList.get(1).equals("X") && numberList.get(2).equals("X") || numberList.get(3).equals("0") && numberList.get(6).equals("0")
+                            || numberList.get(8).equals("0") && numberList.get(4).equals("0") || numberList.get(1).equals("0") && numberList.get(2).equals("0")) {
+                        if (numberList.get(0).equals("-")) {
+                            numberList.set(0, "X");
                         } else {
                             fillUp();
                         }
